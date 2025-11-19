@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><title>Contact — Pintu Wood Craft</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand"><img src="logo.jpg" alt="logo"><div><h1>PINTU WOOD CRAFT</h1><p>Furniture & Carpentry</p></div></div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="payment.html">Payment</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="section-title">Get in Touch</h2>
+    <div class="two-col">
+      <div class="info-box">
+        <form onsubmit="sendMail(event)">
+          <label style="font-weight:700">Your name</label>
+          <input type="text" id="cname" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd" required>
+          <label style="font-weight:700;margin-top:8px">Phone / WhatsApp</label>
+          <input type="tel" id="cphone" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd" required>
+          <label style="font-weight:700;margin-top:8px">Message</label>
+          <textarea id="cmsg" rows="5" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd"></textarea>
+          <div style="margin-top:12px">
+            <button class="btn" type="submit">Send via WhatsApp</button>
+            <a class="btn alt" href="mailto:pintusharma00798@gmail.com">Email Us</a>
+          </div>
+        </form>
+      </div>
+
+      <aside class="contact-card">
+        <h3>Visit Us</h3>
+        <p>L-4/44, Tamarind Road, New Cable Town, Golmuri, Jamshedpur - 831003</p>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=L-4/44+Tamarind+Road+New+Cable+Town+Golmuri+Jamshedpur" target="_blank">Open in Google Maps</a></p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container">© 2025 Pintu Wood Craft</div></footer>
+
+  <script>
+    function sendMail(e){
+      e.preventDefault();
+      const n=document.getElementById('cname').value;
+      const p=document.getElementById('cphone').value;
+      const m=document.getElementById('cmsg').value || 'No message';
+      const text = encodeURIComponent(`New enquiry from website:%0AName: ${n}%0APhone: ${p}%0AMessage: ${m}`);
+      window.open(`https://wa.me/919546280403?text=${text}`,'_blank');
+    }
+  </script>
+</body>
+</html>
